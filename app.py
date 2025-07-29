@@ -9,8 +9,8 @@ import base64
 
 # --- Sidebar ---
 with st.sidebar:
-    st.image("arthur.webp", width=180)
-    st.markdown("## 🔍 Arthur Match")
+    st.image("timeisprecious.jpg", width=180)
+    st.markdown("## 🔍 ReCupid")
     st.markdown("Evaluate candidate fit in seconds using GPT-4.")
     st.markdown("""<hr style="margin-top: 0.5rem; margin-bottom: 1rem;">""", unsafe_allow_html=True)
 
@@ -282,7 +282,7 @@ def render_candidate_result(filename, score, summary, overview, strengths, weakn
     st.markdown(html_content, unsafe_allow_html=True)
 
 # --- Main app ---
-st.title("Arthur Match")
+st.title("ReCupid")
 
 # --- Label and Upload Field ---
 st.markdown("#### 📄 Upload Candidate CVs")
@@ -383,7 +383,7 @@ if evaluate_clicked:
                 <html>
                 <head>
                 <meta charset="utf-8" />
-                <title>Arthur Match Export</title>
+                <title>ReCupid Export</title>
                 <style>
                 body {{ font-family: 'Inter', system-ui, sans-serif; background-color: #f7f9fc; color: #1e293b; padding: 20px; }}
                 h1 {{ color: #2563eb; }}
@@ -397,7 +397,7 @@ if evaluate_clicked:
                 </style>
                 </head>
                 <body>
-                <h1>Arthur Match - Candidate Analysis Export</h1>
+                <h1>ReCupid - Candidate Analysis Export</h1>
                 <section class="job-desc">
                     <h2>Job Description</h2>
                     <p>{job_desc.replace('\n', '<br>')}</p>
@@ -461,5 +461,5 @@ if evaluate_clicked:
 
             export_html = generate_export_html(job_description, candidate_results)
             b64 = base64.b64encode(export_html.encode()).decode()
-            href = f'<a href="data:text/html;base64,{b64}" download="arthur_match_export.html">📥 Download Analysis Export</a>'
+            href = f'<a href="data:text/html;base64,{b64}" download="ReCupid_match_export.html">📥 Download Analysis Export</a>'
             st.markdown(href, unsafe_allow_html=True)
