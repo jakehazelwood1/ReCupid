@@ -157,6 +157,7 @@ Respond strictly in the following JSON format exactly, no extra commentary:
 ### CANDIDATE CV:
 {cv_text}
     """
+    return prompt.format(job_description=job_description, cv_text=cv_text)
 
 def get_candidate_score(cv_text, job_description):
     prompt = build_prompt(cv_text, job_description)
