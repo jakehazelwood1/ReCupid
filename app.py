@@ -138,7 +138,7 @@ def get_cv_text(uploaded_file):
         return ""
 
 def build_prompt(cv_text, job_description):
-    return f"""
+    template = """
 You are an AI recruiter assistant. Review the candidate CV below in relation to the provided job description. Score their fit for the role out of 100 and provide structured feedback.
 
 Respond strictly in the following JSON format exactly, no extra commentary:
@@ -157,7 +157,8 @@ Respond strictly in the following JSON format exactly, no extra commentary:
 ### CANDIDATE CV:
 {cv_text}
     """
-    return prompt.format(job_description=job_description, cv_text=cv_text)
+    return template.format(job_description=job_description, cv_text=cv_text)
+
 
 def get_candidate_score(cv_text, job_description):
     prompt = build_prompt(cv_text, job_description)
