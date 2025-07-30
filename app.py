@@ -159,6 +159,13 @@ Do **not** rely solely on keyword matching. Instead, assess the candidate holist
 
 Be objective, human-like, and critical. If multiple candidates are similar, still attempt to differentiate them.
 
+IMPORTANT:  
+- Do NOT list candidate experience as a weakness if it falls within the stated required range (inclusive).  
+- Do NOT mention or imply that experience “on the lower end” or “at the minimum” is a weakness.  
+- Only flag experience as a weakness if it is explicitly below the minimum required years.  
+- Avoid any phrasing that negatively frames experience when the candidate meets or exceeds the minimum requirements.
+
+
 ---
 
 Respond strictly in the following **valid JSON format only**, without any extra commentary:
