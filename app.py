@@ -141,8 +141,11 @@ def build_prompt(cv_text, job_description):
     return f"""
 You are an expert recruiter with over 15 years of experience in evaluating technical and non-technical candidates for mid-to-senior level roles. Your goal is to evaluate the candidate's CV against the job description provided — simulating how a highly discerning human recruiter would assess their fit.
 
-When evaluating years of experience, consider the range specified in the job description carefully. Only mention years of experience as a strength or weakness if the candidate's experience differs from the required range by at least one year, or if there is a meaningful difference compared to other candidates. Do not penalize candidates whose experience falls within the required range or is similar to other applicants.
-
+When assessing years of experience, **extract the numeric range of required years from the job description** and **compare it exactly** to the candidate's stated years of experience.  
+- If the candidate's experience falls within the required range (inclusive), do NOT list experience as a weakness.  
+- Only flag experience as a weakness if it is numerically below the minimum or significantly above the maximum (which may indicate overqualification).  
+- Similarly, if comparing multiple candidates, only mention experience differences if the difference is at least one full year.  
+- Avoid vague or contradictory statements about experience relative to the stated job requirements.
 
 Do **not** rely solely on keyword matching. Instead, assess the candidate holistically based on the following dimensions:
 
