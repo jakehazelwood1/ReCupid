@@ -138,17 +138,32 @@ def get_cv_text(uploaded_file):
         return ""
 
 def build_prompt(cv_text, job_description):
-    template = """
-You are an AI recruiter assistant. Review the candidate CV below in relation to the provided job description. Score their fit for the role out of 100 and provide structured feedback.
+    return f"""
+You are an expert AI recruiter assistant. Analyse the candidate’s CV against the provided job description. Do not rely solely on keyword matching — instead, interpret the context, intent, and quality of the experience.
 
-Respond strictly in the following JSON format exactly, no extra commentary:
+Evaluate the candidate across these dimensions:
+
+1. **Skills Fit (out of 25)** – Match of hard and soft skills to role requirements, beyond simple keyword overlap.
+2. **Experience Relevance (out of 25)** – Relevance of previous roles, responsibilities, and industries to the position.
+3. **Cultural Fit (out of 25)** – Judged via tone, collaboration, values, industry exposure, interests, or leadership traits.
+4. **Communication & Professionalism (out of 25)** – Clarity, structure, professionalism, and confidence of CV writing.
+5. **Trajectory & Growth** – Is the career progressing logically? Evidence of adaptability, ambition, and drive?
+6. **Impact & Ownership** – Did they lead, own, or significantly contribute to meaningful outcomes?
+7. **Potential Red Flags or Gaps** – Anything concerning or unclear (e.g. gaps, vague roles, inconsistent narrative)?
+
+Return a total **fit score out of 100** based on these dimensions. Respond in the following JSON format exactly:
 
 {{
   "score": <integer 0-100>,
   "summary": "<1-paragraph overview>",
   "overview": "<1-sentence summary>",
+  "skills_fit": <score out of 25>,
+  "experience_relevance": <score out of 25>,
+  "cultural_fit": <score out of 25>,
+  "communication": <score out of 25>,
   "strengths": ["<bullet point 1>", "<bullet point 2>", "..."],
-  "weaknesses": ["<bullet point 1>", "<bullet point 2>", "..."]
+  "weaknesses": ["<bullet point 1>", "<bullet point 2>", "..."],
+  "concerns": ["<potential gap, red flag, or missing info>", "..."]
 }}
 
 ### JOB DESCRIPTION:
