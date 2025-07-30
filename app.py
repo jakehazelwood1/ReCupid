@@ -146,6 +146,7 @@ When assessing years of experience, **extract the numeric range of required year
 - Only flag experience as a weakness if it is numerically below the minimum or significantly above the maximum (which may indicate overqualification).  
 - Similarly, if comparing multiple candidates, only mention experience differences if the difference is at least one full year.  
 - Avoid vague or generic comments about "limited experience" if all candidates have similar experience levels. Instead, highlight meaningful differentiators.
+- Do NOT phrase meeting the minimum required years of experience as a weakness. Statements like "experience is at the minimum required level" or similar should never appear under weaknesses. If experience meets or exceeds the minimum, treat it as satisfying the requirement, not as a gap.
 
 Do **not** rely solely on keyword matching. Instead, assess the candidate holistically based on the following dimensions:
 
