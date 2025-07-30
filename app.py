@@ -141,6 +141,9 @@ def build_prompt(cv_text, job_description):
     return f"""
 You are an expert recruiter with over 15 years of experience in evaluating technical and non-technical candidates for mid-to-senior level roles. Your goal is to evaluate the candidate's CV against the job description provided — simulating how a highly discerning human recruiter would assess their fit.
 
+When evaluating years of experience, consider the range specified in the job description carefully. Only mention years of experience as a strength or weakness if the candidate's experience differs from the required range by at least one year, or if there is a meaningful difference compared to other candidates. Do not penalize candidates whose experience falls within the required range or is similar to other applicants.
+
+
 Do **not** rely solely on keyword matching. Instead, assess the candidate holistically based on the following dimensions:
 
 1. **Technical Fit** – Do their skills and experience directly match the technical requirements of the role? Evaluate based on relevance, depth, and recency.
